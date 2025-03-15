@@ -1,0 +1,60 @@
+{
+  "name": "css-code-ordered",
+  "displayName": "CSS Code Ordered",
+  "description": "Organiza tus propiedades CSS en grupos con comentarios y orden alfabético opcional.",
+  "version": "0.0.1",
+  "publisher": "IkerRodriguez",
+  "engines": {
+      "vscode": "^1.60.0"
+  },
+  "categories": [
+      "Formatters",
+      "Programming Languages"
+  ],
+  "keywords": [
+      "css",
+      "formatter",
+      "organize",
+      "style"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikerodeg/css-code-ordered.git"
+  },
+  "activationEvents": [
+      "onCommand:css-code-ordered.formatCSS",
+      "onLanguage:css"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "css-code-ordered.formatCSS",
+              "title": "Format CSS with CssCodeOrdered"
+          }
+      ],
+      "configuration": {
+          "title": "CSS Code Ordered",
+          "properties": {
+              "cssCodeOrdered.sortAlphabetically": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Ordena las propiedades alfabéticamente dentro de cada grupo."
+              }
+          }
+      }
+  },
+  "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+      "@types/node": "^18.0.0",
+      "@types/vscode": "^1.60.0",
+      "typescript": "^5.0.0"
+  },
+  "dependencies": {
+      "css": "^3.0.0"
+  }
+}
